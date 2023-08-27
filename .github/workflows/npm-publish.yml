@@ -2,14 +2,15 @@ name: Node.js Package
 
 on:
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main
+    branches: [main]
     
   workflow_dispatch:
     inputs:
       version:
         type: string
+        description: 'Version to release'
         required: false
 
 jobs:
@@ -26,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ inputs.version != '' }}
     steps:
+      - uses: actions/checkout@v3
       - name: Configure GIT
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
