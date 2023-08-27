@@ -1,5 +1,6 @@
 # Anderson
 _Modulary health-checker_
+[![Node.js Package](https://github.com/j-catania/anderson/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/j-catania/anderson/actions/workflows/npm-publish.yml)
 
 ## Usage
 ### With installation
