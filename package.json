@@ -1,0 +1,26 @@
+{
+  "name": "@juu/anderson",
+  "version": "0.1.0",
+  "description": "Health-Checker",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-catania/anderson.git"
+  },
+  "keywords": [
+    "health",
+    "health-check",
+    "checker",
+    "discord",
+    "smtp"
+  ],
+  "author": "j-catania <hi@jcatania.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-catania/anderson/issues"
+  },
+  "homepage": "https://github.com/j-catania/anderson#readme"
+}
