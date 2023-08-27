@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/j-catania/anderson.git"
   },
+  "private": false,
   "keywords": [
     "health",
     "health-check",
