@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/j-catania/anderson.git"
+    "url": "git+https://github.com/j-catania/emusk.git"
   },
   "keywords": [
     "health",
@@ -25,7 +25,7 @@
   "author": "j-catania <hi@jcatania.io>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/j-catania/anderson/issues"
+    "url": "https://github.com/j-catania/emusk/issues"
   },
-  "homepage": "https://github.com/j-catania/anderson#readme"
+  "homepage": "https://github.com/j-catania/emusk#readme"
 }
