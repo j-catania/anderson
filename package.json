@@ -27,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/j-catania/emusk/issues"
   },
-  "homepage": "https://github.com/j-catania/emusk#readme"
+  "homepage": "https://github.com/j-catania/emusk#readme",
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.6.4"
+  }
 }
