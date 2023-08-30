@@ -45,12 +45,18 @@ jobs:
       - name: Release
         run: npm version ${{ github.event.inputs.version }}
 
-      - run: npm publish
+      - name: Publish Release
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
 
       - name: Prepare RC
         run: npm version prerelease --preid=rc
+
+      - name: Publish RC
+        run: npm publish --tag rc
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
 
       - name: Push changes
         run: git push --follow-tags
