@@ -1,22 +1,23 @@
-# Anderson
+# eMusk
 _Modulary health-checker_
-[![Node.js Package](https://github.com/j-catania/anderson/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/j-catania/anderson/actions/workflows/npm-publish.yml)
+
+[![Node.js Package](https://github.com/j-catania/emusk/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/j-catania/emusk/actions/workflows/npm-publish.yml)
 
 ## Usage
 ### With installation
 ```shell
-npm i -g @juu/anderson
+npm i -g emusk
 ```
 ```sh
-anderson <option>
+emusk <option>
 ``` 
 ### No installation
 ```sh
-npx @juu/anderson <option>
+npx emusk <option>
 ```
 
 ## Configuration file
 ```
-anderson --config-file=/config/anderson.json <option>
+emusk --config-file=/config/emusk.json <option>
 ```
-default `./.andersonrc`
+default `./.emuskrc`

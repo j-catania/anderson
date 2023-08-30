@@ -3,6 +3,9 @@
   "version": "0.0.3",
   "description": "He is just a guy for checking service health",
   "main": "src/index.js",
+  "bin": {
+    "emusk": "src/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
