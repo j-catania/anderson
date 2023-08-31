@@ -29,7 +29,9 @@ jobs:
         run: npm run lint
 
       - name: Publish RC
-        run: npm publish --tag rc
+        run: |
+          npm set //registry.npmjs.org/:_authToken=NODE_AUTH_TOKEN
+          npm publish --access public --tag rc
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
           
