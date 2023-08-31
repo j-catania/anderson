@@ -2,6 +2,8 @@
 _Modulary health-checker_
 
 [![Node.js Package](https://github.com/j-catania/emusk/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/j-catania/emusk/actions/workflows/npm-publish.yml)
+[![NPM Version](https://img.shields.io/npm/v/emusk.svg)](https://npmjs.org/package/emusk)
+[![NPM Downloads](https://img.shields.io/npm/dm/emusk.svg)](https://npmjs.org/package/emusk)
 
 ## Usage
 ### With installation
