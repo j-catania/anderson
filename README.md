@@ -1,5 +1,5 @@
 # eMusk
-_Modulary health-checker_
+_He is just a modulary guy for checking service health_
 
 [![Node.js Package](https://github.com/j-catania/emusk/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/j-catania/emusk/actions/workflows/npm-publish.yml)
 [![NPM Version](https://img.shields.io/npm/v/emusk.svg)](https://npmjs.org/package/emusk)
