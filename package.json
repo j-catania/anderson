@@ -1,7 +1,7 @@
 {
   "name": "emusk",
   "version": "0.0.6-rc.0",
-  "description": "He is just a guy for checking service health",
+  "description": "He is just a modulary guy for checking service health",
   "main": "src/index.js",
   "bin": {
     "emusk": "src/index.js"
