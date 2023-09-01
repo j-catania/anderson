@@ -6,18 +6,19 @@ _Modulary health-checker_
 [![NPM Downloads](https://img.shields.io/npm/dm/emusk.svg)](https://npmjs.org/package/emusk)
 
 ## Usage
-### With installation
+### via NPM
+#### With installation
 ```shell
 npm i -g emusk
 ```
 ```sh
 emusk <option>
 ``` 
-### No installation
+#### No installation
 ```sh
 npx emusk <option>
 ```
-### Docker
+### via Docker
 
 ## Configuration file
 ```
