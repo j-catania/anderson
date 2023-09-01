@@ -17,6 +17,7 @@ emusk <option>
 ```sh
 npx emusk <option>
 ```
+### Docker
 
 ## Configuration file
 ```
