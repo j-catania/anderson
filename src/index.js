@@ -5,6 +5,7 @@ import { createRequire } from 'module';
 import fetch from 'node-fetch';
 import ConfigService from './services/ConfigService.js';
 
+const { log } = console;
 const require = createRequire(import.meta.url);
 const { name, description, version } = require('../package.json');
 
@@ -22,8 +23,9 @@ const serviceStatuses = [];
 program
   .name(name)
   .description(description)
-  .version(version)
+  .version(version, '-v, --vers', 'output the current version')
   .option('-f, --config-file <confFile>', 'Config file', './emusk.json')
+  .option('-V, --verbose', 'Active more logs')
   .action(async (opts) => {
     const config = await ConfigService.get(opts.configFile);
     config.services.forEach((service) => {
@@ -63,5 +65,5 @@ program
 program.parse();
 
 setInterval(() => {
-  console.log(serviceStatuses);
+  log(serviceStatuses);
 }, 1000);
