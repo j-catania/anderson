@@ -41,6 +41,7 @@
   "homepage": "https://github.com/j-catania/emusk#readme",
   "dependencies": {
     "commander": "^11.0.0",
+    "discord-webhook-node": "^1.1.8",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
