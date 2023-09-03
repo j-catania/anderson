@@ -21,7 +21,8 @@ npx emusk <option>
 ### via Docker
 
 ## Configuration file
+[JSON Schema](emusk.schema.json) - [Example](emusk.example.json)
 ```
 emusk --config-file=/config/emusk.json <option>
 ```
-default `./.emuskrc`
+default `./emusk.json`
