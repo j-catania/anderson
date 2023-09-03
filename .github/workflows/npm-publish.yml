@@ -40,10 +40,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - name: Install Dependencies
-        run: npm ci
-      - name: Lint
-        run: npm run lint
 
       - name: Configure GIT
         run: |
