@@ -1,0 +1,4 @@
+{
+    "$schema": "./emusk.schema.json",
+    "services": [{"name": "Google", "host": "google.fr"}]
+}

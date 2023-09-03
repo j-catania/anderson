@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Product",
+    "description": "A product in the catalog",
+    "type": "object",
+    "properties": {
+        "services": {"type": "array", "items": {"type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "port": {"type": "integer", "minimum": 0, "maximum": 65535},
+                "path": {"type": "string"},
+                "secure": {"type": "boolean", "default": true},
+                "host": {"type": "string", "default": "80 | 443"},
+                "method": {"type": "string", "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"], "default": "GET"},
+                "interval": {"type": "integer", "minimum": 100, "default": 5000},
+                "timeout": {"type": "integer", "minimum": 1, "default": 1000}
+            },
+            "required": ["name", "host"]
+        }}
+    },
+    "required": ["services"]
+}
