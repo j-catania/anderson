@@ -16,7 +16,6 @@ type Service = {
 
 type ServiceStatus = {
     name: string;
-    service: Service;
     status: Status;
     date: Date;
     message?: string;

@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { createRequire } from 'module';
 import fetch from 'node-fetch';
 import ConfigService from './services/ConfigService.js';
+import NotifierService from './services/NotifierService.js';
 
 const { log } = console;
 const require = createRequire(import.meta.url);
@@ -33,7 +34,7 @@ program
        * @type {ServiceStatus}
        */
       const status = {
-        name: service.name, service, status: 'unknown', date: new Date(),
+        name: service.name, status: 'unknown', date: new Date(),
       };
       serviceStatuses.push(status);
 
@@ -48,11 +49,17 @@ program
           if (!resp.ok) {
             throw new Error(`${resp.status} ${resp.statusText}`);
           }
+          if (status.status === 'down') {
+            NotifierService.notify(service, 'up');
+            status.message = undefined;
+          }
           status.status = 'up';
-          status.message = undefined;
         } catch (error) {
-          status.status = 'down';
           status.message = `'${service.name}' ${error.message}`;
+          if (status.status === 'up') {
+            NotifierService.notify(service, 'down', status.message);
+          }
+          status.status = 'down';
         } finally {
           status.date = new Date();
           clearTimeout(timeout);
