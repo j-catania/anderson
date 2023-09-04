@@ -1,4 +1,9 @@
 {
-    "$schema": "./emusk.schema.json",
-    "services": [{"name": "Google", "host": "google.fr"}]
+  "$schema": "./emusk.schema.json",
+  "services": [
+    {
+      "name": "Google",
+      "host": "google.fr"
+    }
+  ]
 }
