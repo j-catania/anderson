@@ -33,7 +33,7 @@ npx emusk <option>
 ```
 ### via Docker
 ```
-docker pull juuu/emusk
+docker run --name emusk -v path/to/my/emusk.json:/config/emusk.json:ro juuu/emusk:latest
 ```
 
 ## Notifier
