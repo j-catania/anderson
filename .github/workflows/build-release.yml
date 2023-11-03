@@ -51,14 +51,35 @@ jobs:
           git config --global user.name "github-actions[bot]"
 
       - name: Release
-        run: npm version ${{ github.event.inputs.version }}
+        id: version
+        run: |
+          VERSION=${`npm version ${{ github.event.inputs.version }}`:1}
+          echo "VERSION=$VERSION" >> "$GITHUB_OUTPUT"
 
-      - name: Publish RC
+      - name: Publish NPM
         run: |
           npm set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+
+      - name: Prepare docker
+        run: |
+          rm -rf node_modules
+          npm ci --only=production
+          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
+
+      - name: Docker build
+        run: |
+          docker build -t juuu/emusk:latest -t juuu/emusk:${{ steps.version.outputs.VERSION }} .
+          docker push juuu/emusk:latest
+          docker push juuu/emusk:${{ github.event.inputs.version }}
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: true
+          tag: v${{ steps.version.outputs.VERSION }}
 
       - name: Prepare RC
         run: npm version prerelease --preid=rc
@@ -72,20 +93,3 @@ jobs:
 
       - name: Push changes
         run: git push --follow-tags
-
-      - name: Prepare docker
-        run: |
-          rm -rf node_modules
-          npm ci --only=production
-          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
-
-      - name: Docker build
-        run: |
-          docker build -t juuu/emusk:latest -t juuu/emusk:${{ github.event.inputs.version }} .
-          docker push juuu/emusk:latest
-          docker push juuu/emusk:${{ github.event.inputs.version }}
-
-      - name: Create Release
-        uses: ncipollo/release-action@v1
-        with:
-          generateReleaseNotes: true
