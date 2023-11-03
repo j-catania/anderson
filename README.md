@@ -32,7 +32,9 @@ emusk <option>
 npx emusk <option>
 ```
 ### via Docker
-_... coming soon_
+```
+docker pull juuu/emusk
+```
 
 ## Notifier
 ### Discord
