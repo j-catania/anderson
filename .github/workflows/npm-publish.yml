@@ -30,11 +30,6 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Docker build
-        run: |
-          docker build -t emusk:latest .
-          docker image list
-
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -82,9 +77,11 @@ jobs:
         run: |
           rm -rf node_modules
           npm ci --only=production
+          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
 
       - name: Docker build
         run: |
-          docker build -t emusk:latest -t emusk:${{ github.event.inputs.version }} .
-          docker image list
+          docker build -t juuu/emusk:latest -t juuu/emusk:${{ github.event.inputs.version }} .
+          docker push juuu/emusk:latest
+          docker push juuu/emusk:${{ github.event.inputs.version }}
 
