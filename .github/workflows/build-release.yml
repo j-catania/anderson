@@ -74,7 +74,7 @@ jobs:
         run: |
           docker build -t juuu/emusk:latest -t juuu/emusk:${{ steps.version.outputs.VERSION }} .
           docker push juuu/emusk:latest
-          docker push juuu/emusk:${{ github.event.inputs.version }}
+          docker push juuu/emusk:${{ steps.version.outputs.VERSION }}
 
       - name: Prepare RC
         run: npm version prerelease --preid=rc
