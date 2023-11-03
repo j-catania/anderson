@@ -73,3 +73,15 @@ jobs:
       - name: Push changes
         run: git push --follow-tags
 
+      - name: Prepare docker
+        run: |
+          rm -rf node_modules
+          npm ci --only=production
+          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
+
+      - name: Docker build
+        run: |
+          docker build -t juuu/emusk:latest -t juuu/emusk:${{ github.event.inputs.version }} .
+          docker push juuu/emusk:latest
+          docker push juuu/emusk:${{ github.event.inputs.version }}
+
