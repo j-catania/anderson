@@ -32,7 +32,7 @@ jobs:
 
       - name: Docker build
         run: |
-          docker build -t emusk:latest -t emusk:${{ github.event.inputs.version }} .
+          docker build -t emusk:latest .
           docker image list
 
   release:
