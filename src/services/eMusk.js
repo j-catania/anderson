@@ -20,7 +20,8 @@ let services;
 const start = async (opts) => {
   const config = await ConfigService.get(opts.configFile);
   services = config.services;
-  NotifierService.hello(services);
+
+  if (opts.hello) NotifierService.hello(services);
 
   services.forEach((service) => {
     /**

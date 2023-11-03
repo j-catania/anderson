@@ -12,9 +12,9 @@ const program = new Command();
 program
   .name(name)
   .description(description)
-  .version(version, '-v, --vers', 'output the current version')
+  .version(version, '-v, --version', 'output the current version')
   .option('-f, --config-file <confFile>', 'Config file', './emusk.json')
-  .option('-h, --noHello', 'Don\'t say hello to notifiers')
+  .option('-h, --no-hello', 'Don\'t say hello to notifiers')
   .option('-V, --verbose', 'Active more logs')
   .action(eMusk.start);
 

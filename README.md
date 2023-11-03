@@ -14,10 +14,11 @@ Usage: emusk [options]
 He is just a modulary guy for checking service health
 
 Options:
-  -v, --vers                    output the current version
+  -v, --version                 output the current version
   -f, --config-file <confFile>  Config file (default: "./emusk.json")
+  -h, --no-hello                Don't say hello to notifiers
   -V, --verbose                 Active more logs
-  -h, --help                    display help for command
+  --help                        display help for command
 ```
 
 ## Installation
@@ -36,9 +37,12 @@ npx emusk <option>
 docker run --name emusk -v path/to/my/emusk.json:/config/emusk.json:ro juuu/emusk:latest
 ```
 
-## Notifier
+## Notifiers
 ### Discord
 _... documention is coming soon_
+
+## Checkers
+### HTTP
 
 
 ## Configuration file
