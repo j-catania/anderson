@@ -12,6 +12,7 @@
                 "path": {"type": "string"},
                 "secure": {"type": "boolean", "default": true},
                 "host": {"type": "string", "default": "80 | 443"},
+                "type": {"type": "string", "enum": ["http"], "default": "http"},
                 "method": {"type": "string", "enum": ["GET", "POST", "PUT", "DELETE", "PATCH"], "default": "GET"},
                 "interval": {"type": "integer", "minimum": 100, "default": 5000},
                 "timeout": {"type": "integer", "minimum": 1, "default": 1000},

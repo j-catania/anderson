@@ -32,6 +32,11 @@ npx emusk <option>
 ### via Docker
 _... coming soon_
 
+## Notifier
+### Discord
+_... documention is coming soon_
+
+
 ## Configuration file
 [JSON Schema](emusk.schema.json) - [Example](emusk.example.json)
 ```

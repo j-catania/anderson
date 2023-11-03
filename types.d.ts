@@ -4,6 +4,7 @@ type ConfigFile = {
 
 type Service = {
     name: string;
+    type: 'http' | 'ping';
     port: number;
     path: string;
     method: string;
@@ -11,7 +12,7 @@ type Service = {
     secure: boolean;
     interval: number;
     timeout: number;
-    notifiers: ServiceNotifier[];
+    notifiers?: ServiceNotifier[];
 }
 
 type ServiceStatus = {

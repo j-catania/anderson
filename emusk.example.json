@@ -3,7 +3,13 @@
   "services": [
     {
       "name": "Google",
-      "host": "google.fr"
+      "host": "google.fr",
+      "notifiers": [
+        {
+          "type": "discord",
+          "webhook": "https://discord.com/api/webhooks/[...]"
+        }
+      ]
     }
   ]
 }
