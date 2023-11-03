@@ -85,3 +85,7 @@ jobs:
           docker push juuu/emusk:latest
           docker push juuu/emusk:${{ github.event.inputs.version }}
 
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          generateReleaseNotes: true
