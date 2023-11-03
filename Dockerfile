@@ -1,7 +1,9 @@
 FROM node:20.9.0-alpine
 
-COPY ./src /app
-COPY node_modules ./app/node_modules
-COPY package.json ./app
+COPY src /emusk/src
+COPY node_modules /emusk/node_modules
+COPY package.json ./emusk/package.json
 
-CMD ["node", "/app/index.js -f /config/emusk.json"]
+WORKDIR /emusk
+
+CMD ["node", "./src/index.js", "-f" ,"/config/emusk.json"]
