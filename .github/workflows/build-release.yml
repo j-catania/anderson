@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Build and Release
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ inputs.version != '' }}
+    if: ${{ inputs.version != '' && github.ref == 'refs/heads/main' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
