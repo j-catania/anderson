@@ -21,7 +21,7 @@ const notify = (name, status, notifier, desc) => {
 
   hook.setUsername('eMusk');
   hook.send(message)
-    .catch((r) => error(r));
+    .catch(error);
 };
 
 /**
@@ -38,7 +38,7 @@ const hello = (name, notifier) => {
 
   hook.setUsername('eMusk');
   hook.send(message)
-    .catch((r) => error(r));
+    .catch(error);
 };
 
 /**
