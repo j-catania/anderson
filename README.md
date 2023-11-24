@@ -6,6 +6,7 @@ _He is just a modulary guy for checking service health_
 [![NPM Downloads](https://img.shields.io/npm/dm/emusk.svg)](https://npmjs.org/package/emusk)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/juuu/emusk?logo=docker)](https://hub.docker.com/r/juuu/emusk)
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/juuu/emusk/latest?logo=docker)](https://hub.docker.com/r/juuu/emusk)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Usage
 ```shell

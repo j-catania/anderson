@@ -27,8 +27,8 @@ jobs:
           node-version: 18
       - name: Install Dependencies
         run: npm ci
-      - name: Lint
-        run: npm run lint
+      - name: JavaScript Standard Style
+        run: npm run standard
 
   release:
     needs: build
