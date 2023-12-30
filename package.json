@@ -31,7 +31,8 @@
     "commander": "^11.0.0",
     "discord-webhook-node": "^1.1.8",
     "express": "^4.18.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "prom-client": "^15.1.0"
   },
   "devDependencies": {
     "jest": "^29.6.4",
