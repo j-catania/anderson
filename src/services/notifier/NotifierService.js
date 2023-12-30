@@ -43,8 +43,8 @@ const hello = (s) => {
  * @param {Service[]} s
  */
 const goodbye = (s) => {
-  const services = s.filter((ss) => ss.notifiers?.length > 0)
-  const proms = services.map((service) => service.notifiers
+  const services = s?.filter((ss) => ss.notifiers?.length > 0)
+  const proms = services?.map((service) => service.notifiers
     .map((notifier) => {
       let rt
       switch (notifier.type) {
