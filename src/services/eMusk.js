@@ -18,14 +18,14 @@ const serviceStatuses = []
  */
 let services
 
-const start = async (opts) => {
+const start = ({ version }) => async (opts) => {
   const config = await ConfigService.get(opts.configFile)
 
   services = config.services
 
   Express.init(+opts.port, serviceStatuses)
 
-  if (opts.hello) NotifierService.hello(services)
+  if (opts.hello) NotifierService.hello(services, version)
 
   services.forEach((service) => {
     /**

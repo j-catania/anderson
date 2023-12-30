@@ -28,13 +28,14 @@ const notify = (name, status, notifier, desc) => {
  * Say hello to discord
  * @param {string} name Service name
  * @param {ServiceNotifier} notifier Service notifier information
+ * @param {string} version
  */
-const hello = (name, notifier) => {
+const hello = (name, notifier, version) => {
   const hook = new Webhook(notifier.webhook)
   const message = new MessageBuilder()
-    .setTitle(`'${name}' is protected by eMusk`)
+    .setTitle(`'${name}' is protected by eMusk v${version}`)
     .setColor('#5d0bda')
-    .setDescription('Hello, I\'m eMusk, I\'m here to notify you when your service is down')
+    .setDescription('Hi, I\'m eMusk, I\'m here to notify you when your service is down')
 
   hook.setUsername('eMusk')
   hook.send(message)
@@ -52,7 +53,7 @@ const goodbye = (name, notifier) => {
   const message = new MessageBuilder()
     .setTitle(`'${name}' is no more protected by eMusk`)
     .setColor('#b7071f')
-    .setDescription('Hello, eMusk is no more protecting your service')
+    .setDescription('Hi, eMusk is no more protecting your service')
 
   hook.setUsername('eMusk')
   return hook.send(message)

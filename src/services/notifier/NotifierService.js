@@ -21,15 +21,16 @@ const notify = (service, status, desc) => {
 /**
  * Send message to all notifiers for saying hello
  * @param {Service[]} s
+ * @param {string} version
  */
-const hello = (s) => {
+const hello = (s, version) => {
   const services = s.filter((ss) => ss.notifiers?.length > 0)
 
   services.forEach((service) => {
     service.notifiers.forEach((notifier) => {
       switch (notifier.type) {
         case 'discord': {
-          DiscordNotifierProvider.hello(service.name, notifier)
+          DiscordNotifierProvider.hello(service.name, notifier, version)
           break
         }
         default:
