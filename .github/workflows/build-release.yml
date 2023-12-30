@@ -77,7 +77,7 @@ jobs:
           docker push juuu/emusk:${{ steps.version.outputs.VERSION }}
 
       - name: Prepare RC
-        run: npm version prerelease --preid=rc
+        run: npm version prerelease --preid=rc --no-git-tag-version
 
       - name: Publish RC
         run: |
