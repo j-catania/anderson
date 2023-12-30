@@ -1,6 +1,7 @@
 import ConfigService from './ConfigService.js'
 import HttpChecker from './checker/HttpChecker.js'
 import NotifierService from './notifier/NotifierService.js'
+import Express from './Express.js'
 
 const { log } = console
 
@@ -19,7 +20,10 @@ let services
 
 const start = async (opts) => {
   const config = await ConfigService.get(opts.configFile)
+
   services = config.services
+
+  Express.init(+opts.port, serviceStatuses)
 
   if (opts.hello) NotifierService.hello(services)
 

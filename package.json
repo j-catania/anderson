@@ -30,6 +30,7 @@
   "dependencies": {
     "commander": "^11.0.0",
     "discord-webhook-node": "^1.1.8",
+    "express": "^4.18.2",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {

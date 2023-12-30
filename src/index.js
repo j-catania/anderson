@@ -16,6 +16,7 @@ program
   .option('-f, --config-file <confFile>', 'Config file', './emusk.json')
   .option('-h, --no-hello', 'Don\'t say hello to notifiers')
   .option('-V, --verbose', 'Active more logs')
+  .option('-p, --port <port>', 'HTTP port', '1337')
   .action(eMusk.start)
 
 program.parse()

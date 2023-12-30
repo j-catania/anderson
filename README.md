@@ -19,6 +19,7 @@ Options:
   -f, --config-file <confFile>  Config file (default: "./emusk.json")
   -h, --no-hello                Don't say hello to notifiers
   -V, --verbose                 Active more logs
+  -p, --port                    HTTP port (default: 1337)
   --help                        display help for command
 ```
 
