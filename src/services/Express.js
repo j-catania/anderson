@@ -27,7 +27,7 @@ const init = (port, serviceStatuses) => {
     console.log(`Metrics are available on http://localhost:${port}/metrics`)
   })
 
-  return {server}
+  return { server }
 }
 
 const Express = {
