@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises'
 
 /**
  * Get config file
@@ -7,16 +7,16 @@ import { readFile } from 'node:fs/promises';
  */
 const get = async (path) => {
   try {
-    const cfg = await readFile(path, 'utf-8');
+    const cfg = await readFile(path, 'utf-8')
 
-    return JSON.parse(cfg);
+    return JSON.parse(cfg)
   } catch (e) {
-    throw new Error(`Error reading config file: ${e.message}`);
+    throw new Error(`Error reading config file: ${e.message}`)
   }
-};
+}
 
 const ConfigService = {
-  get,
-};
+  get
+}
 
-export default ConfigService;
+export default ConfigService

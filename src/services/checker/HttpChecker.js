@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
-import NotifierService from '../notifier/NotifierService.js';
+import fetch from 'node-fetch'
+import NotifierService from '../notifier/NotifierService.js'
 
 /**
  *
@@ -8,39 +8,39 @@ import NotifierService from '../notifier/NotifierService.js';
  * @returns {Promise<ServiceStatus>}
  */
 const check = async (service, status) => {
-  const myStatus = { ...status };
-  const url = `${(service.secure ?? true) ? 'https' : 'http'}://${service.host}${service.port ? `:${service.port}` : ''}${service.path ?? ''}`;
-  const controller = new AbortController();
+  const myStatus = { ...status }
+  const url = `${(service.secure ?? true) ? 'https' : 'http'}://${service.host}${service.port ? `:${service.port}` : ''}${service.path ?? ''}`
+  const controller = new AbortController()
 
   const timeout = setTimeout(() => {
-    controller.abort();
-  }, service.timeout ?? 1000);
+    controller.abort()
+  }, service.timeout ?? 1000)
 
   try {
-    const resp = await fetch(url, { method: service.method ?? 'GET', signal: controller.signal });
+    const resp = await fetch(url, { method: service.method ?? 'GET', signal: controller.signal })
     if (!resp.ok) {
-      throw new Error(`${resp.status} ${resp.statusText}`);
+      throw new Error(`${resp.status} ${resp.statusText}`)
     }
     if (myStatus.status === 'down') {
-      NotifierService.notify(service, 'up');
-      myStatus.message = undefined;
+      NotifierService.notify(service, 'up')
+      myStatus.message = undefined
     }
-    myStatus.status = 'up';
+    myStatus.status = 'up'
   } catch (error) {
-    myStatus.message = error.message;
+    myStatus.message = error.message
     if (status.status === 'up') {
-      NotifierService.notify(service, 'down', status.message);
+      NotifierService.notify(service, 'down', status.message)
     }
-    myStatus.status = 'down';
+    myStatus.status = 'down'
   } finally {
-    myStatus.date = new Date();
-    clearTimeout(timeout);
+    myStatus.date = new Date()
+    clearTimeout(timeout)
   }
-  return myStatus;
-};
+  return myStatus
+}
 
 const HttpChecker = {
-  check,
-};
+  check
+}
 
-export default HttpChecker;
+export default HttpChecker
