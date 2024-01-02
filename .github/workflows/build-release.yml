@@ -29,6 +29,15 @@ jobs:
         run: npm ci
       - name: JavaScript Standard Style
         run: npm run standard
+      - name: test
+        run: npm run test
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: JEST Tests
+          path: reports/jest-junit.xml
+          reporter: jest-junit
 
   release:
     needs: build
