@@ -39,7 +39,7 @@ jobs:
           path: reports/jest-junit.xml
           reporter: jest-junit
       - name: Coverage Report
-        uses: j-catania/test-reporter@main
+        uses: dorny/test-reporter@feature/lcov-support
         if: success() || failure()
         with:
           name: JEST Coverage
