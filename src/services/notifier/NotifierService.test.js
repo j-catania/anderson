@@ -1,15 +1,16 @@
 // test all NotifierService methods
 import { jest } from '@jest/globals'
-import NotifierService from './NotifierService.js'
 
 const mockNotify = jest.fn()
 const mockHello = jest.fn()
 const mockGoodbye = jest.fn()
 
-jest.mock('./providers/DiscordNotifierProvider.js', () => ({
-  hello: mockHello,
-  goodbye: mockGoodbye,
-  notify: mockNotify
+jest.unstable_mockModule('./providers/DiscordNotifierProvider.js', () => ({
+  default: {
+    hello: mockHello,
+    goodbye: mockGoodbye,
+    notify: mockNotify
+  }
 }))
 
 describe('NotifierService', () => {
@@ -42,8 +43,10 @@ describe('NotifierService', () => {
       ]
     }
   ]
+  let NotifierService
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    NotifierService = (await import('./NotifierService.js')).default
     jest.clearAllMocks()
   })
 
