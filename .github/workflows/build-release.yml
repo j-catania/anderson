@@ -43,7 +43,7 @@ jobs:
         if: success() || failure()
         with:
           name: JEST Coverage
-          path: coverage/lcov.info
+          path: coverage/coverage-final.json
           reporter: lcov
 
   release:
