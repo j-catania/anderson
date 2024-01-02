@@ -131,3 +131,4 @@ dist
 .pnp.*
 
 /my.emusk.json
+/reports/
