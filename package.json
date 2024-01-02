@@ -13,7 +13,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --reporters=jest-junit",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --reporters=jest-junit --coverage",
     "standard": "standard",
     "standard:fix": "standard --fix"
   },
