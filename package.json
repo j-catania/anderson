@@ -45,7 +45,8 @@
   "jest": {
     "collectCoverage": true,
     "coverageReporters": [
-      "json-summary"
+      "json-summary",
+      "default"
     ],
     "reporters": [
       "jest-junit"
