@@ -46,7 +46,8 @@
     "collectCoverage": true,
     "coverageReporters": [
       "json-summary",
-      "json"
+      "json",
+      "lcov"
     ],
     "reporters": [
       "jest-junit"
