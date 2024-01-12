@@ -13,7 +13,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --reporters=jest-junit --coverage",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "standard": "standard",
     "standard:fix": "standard --fix",
     "make-coverage-badge": "make-coverage-badge --output-path ./coverage-badge.svg"
@@ -43,8 +43,12 @@
     "standard": "^17.1.0"
   },
   "jest": {
+    "collectCoverage": true,
     "coverageReporters": [
       "json-summary"
+    ],
+    "reporters": [
+      "jest-junit"
     ]
   },
   "jest-junit": {
