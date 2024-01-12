@@ -38,6 +38,7 @@ jobs:
           name: JEST Tests
           path: reports/jest-junit.xml
           reporter: jest-junit
+          fail-on-error: false
       - name: Coverage Report
         uses: dorny/test-reporter@feature/lcov-support
         if: success() || failure()
@@ -45,6 +46,7 @@ jobs:
           name: JEST Coverage
           path: coverage/lcov.info
           reporter: lcov
+          fail-on-error: false
 
   release:
     needs: build
