@@ -8,7 +8,7 @@ _He is just a modulary guy for checking service health_
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/juuu/emusk/latest?logo=docker)](https://hub.docker.com/r/juuu/emusk)
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg?logo=jest)](https://github.com/jestjs/jest)
-
+![Coverage badge](./coverage-badge.svg)
 
 ## Usage
 ```shell
