@@ -21,17 +21,17 @@ const check = async (service, status) => {
     if (!resp.ok) {
       throw new Error(`${resp.status} ${resp.statusText}`)
     }
-    if (myStatus.status === 'down') {
-      NotifierService.notify(service, 'up')
+    if (myStatus.status === 'offline') {
+      NotifierService.notify(service, 'online')
       myStatus.message = undefined
     }
-    myStatus.status = 'up'
+    myStatus.status = 'online'
   } catch (error) {
     myStatus.message = error.message
-    if (status.status === 'up') {
-      NotifierService.notify(service, 'down', status.message)
+    if (status.status === 'online') {
+      NotifierService.notify(service, 'offline', status.message)
     }
-    myStatus.status = 'down'
+    myStatus.status = 'offline'
   } finally {
     myStatus.date = new Date()
     clearTimeout(timeout)

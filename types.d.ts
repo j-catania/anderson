@@ -22,7 +22,7 @@ type ServiceStatus = {
     message?: string;
 }
 
-type Status = 'down' | 'up' | 'unknown'
+type Status = 'offline' | 'online' | 'unknown'
 
 type ServiceNotifier = {
     webhook?: string;

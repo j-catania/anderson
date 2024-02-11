@@ -52,7 +52,7 @@ describe('NotifierService', () => {
 
   describe('notify', () => {
     it('should call notify for each notifier', () => {
-      NotifierService.notify(services[0], 'UP')
+      NotifierService.notify(services[0], 'online')
       expect(mockNotify).toHaveBeenCalledTimes(1)
     })
   })

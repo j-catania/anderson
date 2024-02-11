@@ -12,11 +12,11 @@ const { error } = console
 const notify = (name, status, notifier, desc) => {
   const hook = new Webhook(notifier.webhook)
   const message = new MessageBuilder()
-    .setTitle(`${name} status changed`)
+    .setTitle(`${name} is ${status}`)
     .addField('Service', name, true)
     .addField('Status', status)
-    .setColor(status === 'down' ? '#b71717' : '#17b75c')
-    .setThumbnail('https://cdn.discordapp.com/embed/avatars/0.png')
+    .setColor(status === 'offline' ? '#b71717' : '#17b75c')
+    .setThumbnail('https://cdn-icons-png.flaticon.com/512/3004/3004458.png')
     .setDescription(desc ?? '')
 
   hook.setUsername('eMusk')
@@ -35,7 +35,7 @@ const hello = (name, notifier, version) => {
   const message = new MessageBuilder()
     .setTitle(`'${name}' is protected by eMusk v${version}`)
     .setColor('#5d0bda')
-    .setDescription('Hi, I\'m eMusk, I\'m here to notify you when your service is down')
+    .setDescription('Hi, I\'m eMusk, I\'m here to notify you when your service is offline')
 
   hook.setUsername('eMusk')
   hook.send(message)
